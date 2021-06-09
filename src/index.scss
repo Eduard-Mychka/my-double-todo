@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  background-color: rgb(207, 191, 191);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+  padding: 0;
+}
+
+/* custom scroll bar */
+*{
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ebd4d4;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #e9caca;
+  }
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  max-height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: center;
+  width: 500px;
+  padding: 20px 20px;
+  flex-direction: column;
+  background-color: rgb(255, 239, 239);
+  border-radius: 10px;
+
+  .form-control {
+    text-transform: capitalize;
+    box-shadow: 1px 1px 3px #ffb0b0, 
+      -1px -1px 3px #ffb0b0;
+  }
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: rgb(241, 232, 232);
+  text-transform: capitalize;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px #ff8282, 
+    -1px -1px 3px #ffffff;
+
+  .fas {
+    font-size: 20px;
+    &:hover { 
+      cursor: pointer;
+    }
+  }
+
+  .done {
+    text-decoration: line-through rgb(0, 0, 0);
+    opacity: .5;
+  }
+
+  .title {
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 500;
+    width: 320px; 
+  }
+
+  .important {
+    font-weight: 600;
+    color: rgb(53, 53, 255);
+  }
+
+  .list-group-buttons {
+    display: flex;
+    .btn-delete {
+      padding: 3px;
+      &:hover {
+        background-color: rgb(255, 182, 182);
+        color: black;
+      }
+    }
+      
+    .btn-edit{
+      padding: 3px;
+      &:hover {
+        background-color: rgb(198, 250, 205);
+        color: black;
+      }
+    }
+  }
+}
+
+
+.active {
+  animation: del .6s linear;
+  transition: all .9s;
+}
+@keyframes del {
+  to{
+    opacity: 0; 
+    transform: rotate(1deg) skew(1deg) scale(2);
+  }
+}
